@@ -1,19 +1,11 @@
-const rootDir = require('../util/path')
-const path = require('path')
 const express = require('express');
 const router = express.Router();
+const contactController=require('../controllers/contact')
 
 //admin/add-product =>GET
-router.get('/contact-us', (req, res, next) => {
-    console.log("Middleware 1");
-    res.sendFile(path.join(rootDir, 'views', 'contactus.html'))
-
-})
+router.get('/contact-us', contactController.getContact)
 
 //admin/add-product =>POST
-router.post('/contact-us', (req, res, next) => {
-    console.log(req.body);
-    res.redirect('/success')
-})
+router.post('/contact-us', contactController.postContact )
 
 module.exports = router;

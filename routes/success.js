@@ -1,12 +1,7 @@
-const rootDir = require('../util/path')
-const path = require('path')
 const express = require('express')
 const router = express.Router();
+const messageController=require('../controllers/messages')
 
-router.post('/success', (req, res, next) => {
-    console.log("Middleware 2");
-    res.sendFile(path.join(rootDir, 'views', 'success.html'))
-
-})
+router.post('/success', messageController.successMessage )
 
 module.exports = router;
