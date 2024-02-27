@@ -3,9 +3,9 @@ const path = require('path')
 const express = require('express')
 const router = express.Router();
 
-router.get('/', (req, res, next) => {
+router.post('/success', (req, res, next) => {
     console.log("Middleware 2");
-   res.sendFile(path.join(rootDir,'views','shop.html'))
+    res.sendFile(path.join(rootDir, 'views', 'success.html'))
 
 })
 
